@@ -1,0 +1,79 @@
+CREATE TABLE CUSTOMER (
+  Customer_ID INT PRIMARY KEY,
+  Name VARCHAR(50),
+  DOB DATE,
+  Age INT,
+  Email VARCHAR(100)
+);
+
+CREATE TABLE ADMIN (
+  Admin_Name VARCHAR(100),
+  Admin_Role VARCHAR(100),
+  PRIMARY KEY (Admin_Name, Admin_Role)
+);
+
+CREATE TABLE MOVIE (
+  Title VARCHAR(100) PRIMARY KEY,
+  Description VARCHAR(1000)
+);
+
+CREATE TABLE MOVIE_WEBSITE (
+  Web_Name VARCHAR(100) PRIMARY KEY,
+  Contact_No INT,
+  Admin_Name VARCHAR(100),
+  Admin_Role VARCHAR(100),
+  FOREIGN KEY (Admin_Name, Admin_Role) REFERENCES ADMIN (Admin_Name, Admin_Role)
+);
+
+CREATE TABLE MOVIE_SHOW (
+  Show_ID INT PRIMARY KEY,
+  Movie VARCHAR(100),
+  Language VARCHAR(50),
+  Show_Date DATE,
+  Show_StartTime TIME,
+  Show_EndTime TIME,
+  Web_Name VARCHAR(100),
+  FOREIGN KEY (Web_Name) REFERENCES MOVIE_WEBSITE (Web_Name)
+);
+
+CREATE TABLE TICKET (
+  Ticket_ID INT PRIMARY KEY,
+  Seat_No VARCHAR(10),
+  Price DECIMAL(10,2),
+  Screen_No INT,
+  Show_ID INT,
+  FOREIGN KEY (Show_ID ) REFERENCES MOVIE_SHOW ( Show_ID )
+);
+
+CREATE TABLE CUSTOMER_MOBILE_NO (
+  Customer_ID INT,
+  Mobile_No VARCHAR(20),
+  PRIMARY KEY (Customer_ID, Mobile_No),
+  FOREIGN KEY (Customer_ID) REFERENCES CUSTOMER(Customer_ID)
+);
+
+
+CREATE TABLE THEATRE (
+  Theatre_Name VARCHAR(100),
+  City VARCHAR(50),
+  Location VARCHAR(100),
+  PRIMARY KEY (Theatre_Name, City)
+);
+
+
+CREATE TABLE SCREEN (
+  Screen_No INT PRIMARY KEY,
+  No_of_Seats INT,
+  Theatre_Name VARCHAR(100),
+  City VARCHAR(50),
+  FOREIGN KEY (Theatre_Name, City) REFERENCES THEATRE (Theatre_Name, City)
+);
+
+
+CREATE TABLE BOOKS (
+  Ticket_ID INT,
+  Customer_ID INT,
+  PRIMARY KEY (Ticket_ID, Customer_ID),
+  FOREIGN KEY (Ticket_ID) REFERENCES TICKET(Ticket_ID),
+  FOREIGN KEY (Customer_ID) REFERENCES CUSTOMER(Customer_ID)
+);
