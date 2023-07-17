@@ -1,0 +1,54 @@
+1.	INSERT INTO customer (cid, name, dob, age, email)
+VALUES (1, 'John Doe', '1995-01-01', 28, 'johndoe@gmail.com');
+
+INSERT INTO customer (cid, name, dob, age, email)
+VALUES (2, 'Jane Doe', '1997-05-05', 26, 'janedoe@gmail.com');
+2.	INSERT INTO custom_mobileno (cid, mobile_no)
+VALUES (1, '1234567890');
+
+INSERT INTO custom_mobileno (cid, mobile_no)
+VALUES (2, '0987654321');
+
+3.	INSERT INTO movie_show (show_id, movie, language, show_date, show_starttime, show_endtime)
+VALUES (1, 'The Avengers', 'English', '2023-02-11', '17:00:00', '19:30:00');
+
+INSERT INTO movie_show (show_id, movie, language, show_date, show_starttime, show_endtime)
+VALUES (2, 'Avatar', 'English', '2023-02-12', '14:00:00', '16:30:00');
+
+4.	INSERT INTO movie (title, description)
+VALUES ('The Avengers', 'A team of superheroes come together to save the world.');
+
+INSERT INTO movie (title, description)
+VALUES ('Avatar', 'A paraplegic Marine is sent to an alien planet to protect human interests.');
+
+5.	INSERT INTO theatre (theatre_name, city, location)
+VALUES ('IMAX', 'Los Angeles', 'Hollywood');
+
+INSERT INTO theatre (theatre_name, city, location)
+VALUES ('Cineplex', 'New York', 'Times Square');
+
+6.	INSERT INTO screen (screen_no, no_of_seats)
+VALUES (1, 200);
+
+INSERT INTO screen (screen_no, no_of_seats)
+VALUES (2, 150);
+
+7.	INSERT INTO movie_website (web_name, contact_no)
+VALUES ('Fandango', '555-555-5555');
+
+INSERT INTO movie_website (web_name, contact_no)
+VALUES ('MovieTickets.com', '555-555-5556');
+
+8.	INSERT INTO admin (admin_name, admin_role)
+VALUES ('Sarah Johnson', 'Manager');
+INSERT INTO admin (admin_name, admin_role)
+VALUES ('Michael Lee', 'Assistant Manager');
+
+9.	INSERT INTO tickets (ticketid, seatno, price, screenno) VALUES (1, 'A1', 100, 1);
+INSERT INTO tickets (ticketid, seatno, price, screenno) VALUES (2, 'A2', 100, 1);
+
+10.	INSERT INTO books (ticketid, cid) VALUES (1, 1);
+INSERT INTO books (ticketid, cid) VALUES (2, 2);
+
+
+
